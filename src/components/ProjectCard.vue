@@ -17,17 +17,19 @@ export default {
             <h5 class="card-title">{{ projectObj.title }}</h5>
             <p class="card-text">{{ projectObj.description }}</p>
             <h6 class="me-2 fw-bold d-inline-block">Tipo: </h6>
-            <span class="badge rounded-pill border" :style="{ color: projectObj.type.color }">
-                {{ projectObj.type ? projectObj.type.name : "nessun tipo trovato"
-                }}
+            <span v-if="projectObj.type" class="badge rounded-pill border" :style="{ color: projectObj.type.color }">
+                {{ projectObj.type.name }}
             </span>
+            <span v-else class="fst-italic fw-lighter text-secondary small">nessun tipo indicato</span>
             <br>
             <h6 class="me-2 fw-bold d-inline-block">Tecnologie:</h6>
-            <span class="badge rounded-pill border me-2" :style="{ backgroundColor: technology.color }"
-                v-for="technology in projectObj.technologies">
+            <span v-if="projectObj.technologies && projectObj.technologies.length > 0"
+                v-for="technology in projectObj.technologies" class="badge rounded-pill border me-2"
+                :style="{ backgroundColor: technology.color }">
                 {{ technology.name }}
             </span>
-            <div class="align-self-end mt-3">
+            <span v-else class="fst-italic fw-lighter text-secondary small">nessuna tecnologia indicata</span>
+            <div class="mt-3">
                 <a href="#" class="btn btn-success btn-sm">Dettagli</a>
             </div>
         </div>

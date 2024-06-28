@@ -27,7 +27,7 @@ export default {
 
     <div class="container">
         <h1 class="py-3 text-center fw-bold">Elenco Progetti</h1>
-        <div class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="row row-cols-1 row-cols-md-2 g-3 mb-4">
             <div class="col" v-for="project in projects">
                 <!-- Card Project -->
                 <ProjectCard :projectObj="project" />
