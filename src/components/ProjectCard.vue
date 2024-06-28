@@ -17,10 +17,16 @@ export default {
             <h5 class="card-title">{{ projectObj.title }}</h5>
             <p class="card-text">{{ projectObj.description }}</p>
             <h6 class="me-2 fw-bold d-inline-block">Tipo: </h6>
-            <span>ciao</span>
+            <span class="badge rounded-pill border" :style="{ color: projectObj.type.color }">
+                {{ projectObj.type ? projectObj.type.name : "nessun tipo trovato"
+                }}
+            </span>
             <br>
             <h6 class="me-2 fw-bold d-inline-block">Tecnologie:</h6>
-            <span>ciao</span>
+            <span class="badge rounded-pill border me-2" :style="{ backgroundColor: technology.color }"
+                v-for="technology in projectObj.technologies">
+                {{ technology.name }}
+            </span>
             <div class="align-self-end mt-3">
                 <a href="#" class="btn btn-success btn-sm">Dettagli</a>
             </div>
