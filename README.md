@@ -2,6 +2,8 @@
 
 (ci sono due repositories da creare per questo esercizio)
 
+## GIORNO 1
+
 ### Milestone 1
 
 nome repo 1: **laravel-api**
@@ -26,6 +28,20 @@ Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente
 
 Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
 
-### BONUS:
+### Bonus:
 
 implementare la paginazione lato front office.
+
+## GIORNO 2
+
+- Iniziate installando il router di vue.
+- Create due pagine statiche, ad esempio, Home e About us e create il file router.js dove dovrete impostare le rotte corrispondenti alle due pagine create.
+- Inserite il router nel file main.js in modo da renderlo disponibile a livello di tutta l'applicazione.
+- Nel file App.vue impostate il tag `<router-view>` che sarà il punto di inserimento di diverse pagine.
+- A questo punto potete inserire le voci delle pagine nel menu di navigazione e testare il tutto.
+- Infine create la pagina dei progetti e spostate il codice scritto venerdì in questa pagina, aggiornando gli import dei componenti.
+- Collegate la pagina al router e testate il tutto.
+
+### Bonus:
+
+Aggiungere la pagina singolo post, creando prima api corrispondente.
