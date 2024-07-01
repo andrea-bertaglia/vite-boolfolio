@@ -4,7 +4,9 @@ export default {
         projectObj: Object,
     },
     data() {
-        imageBaseUrl: 'http://127.0.0.1:8000/storage'
+        return {
+            imageBaseUrl: 'http://127.0.0.1:8000/storage'
+        }
     },
 }
 </script>
@@ -33,11 +35,12 @@ export default {
                 <span v-else class="fst-italic fw-lighter text-secondary small">nessuna tecnologia indicata</span>
             </div>
             <div class="mt-3 ">
-                <a href="#" class="btn btn-primary btn-sm">Dettagli</a>
+                <router-link class="btn btn-primary btn-sm"
+                    :to="{ name: 'single-project', params: { slug: projectObj.slug } }">Dettagli</router-link>
             </div>
         </div>
     </div>
 
 </template>
 
-<style></style>
+<style lang="scss" scoped></style>
