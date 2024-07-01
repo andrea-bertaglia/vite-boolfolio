@@ -1,4 +1,4 @@
-const { createRouter, createWebHistory } = require("vue-router");
+import { createRouter, createWebHistory } from "vue-router";
 import AppHome from "./pages/AppHome.vue";
 import AboutUs from "./pages/AppAboutUs.vue";
 
