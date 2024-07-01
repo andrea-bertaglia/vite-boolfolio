@@ -2,7 +2,9 @@
 import axios from "axios";
 export default {
     deta() {
-        return {};
+        return {
+            project: null,
+        };
     },
     created() {
         // console.log(this.$route);
@@ -12,14 +14,38 @@ export default {
         axios
             .get(`http://127.0.0.1:8000/api/projects/${slug}`)
             .then((resp) => {
-                console.log(resp);
+                // console.log(resp);
+                this.project = resp.data.results;
+                // console.log(this.project);
             })
     }
 }
 </script>
 
 <template>
-    <h1>single page</h1>
+    <div class="container">
+        <div class="title py-4 text-center">
+            <h1 class=" fw-bold">{{ project.title }}</h1>
+        </div>
+        <div class="d-flex gap-3">
+            <img :src="project.thumb ? `${imageBaseUrl}/${project.thumb}` : `https://placehold.co/300x150?text=Anteprima+non+disponibile`"
+                class="card-img-top" :alt="`Immagine di ${project.title}`">
+            <p>{{ project.description }}</p>
+        </div>
+
+        <h6 class="me-2 fw-bold d-inline-block pt-5">Tipo: </h6>
+        <span v-if="project.type" class="badge rounded-pill border" :style="{ color: project.type.color }">
+            {{ project.type.name }}
+        </span>
+        <span v-else class="fst-italic fw-lighter text-secondary small">nessun tipo indicato</span>
+        <br>
+        <h6 class="me-2 fw-bold d-inline-block pt-3">Tecnologie:</h6>
+        <span v-if="project.technologies && project.technologies.length > 0" v-for="technology in project.technologies"
+            class="badge rounded-pill border me-2" :style="{ backgroundColor: technology.color }">
+            {{ technology.name }}
+        </span>
+        <span v-else class="fst-italic fw-lighter text-secondary small">nessuna tecnologia indicata</span>
+    </div>
 </template>
 
 <style lang="scss" scoped></style>
