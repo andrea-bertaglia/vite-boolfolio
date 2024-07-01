@@ -18,6 +18,10 @@ export default {
                 // console.log(resp);
                 this.project = resp.data.results;
                 console.log(this.project);
+            })
+            .catch((error) => {
+                // console.log(error);
+                this.$router.push({ name: "not-found" });
             });
     }
 }
