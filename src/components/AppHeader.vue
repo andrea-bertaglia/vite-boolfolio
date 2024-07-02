@@ -19,6 +19,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <template>
@@ -35,8 +36,7 @@ export default {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item" v-for="item in navItems">
-                        <router-link :to="{ name: item.routeName }" class="nav-link active" aria-current="page"
-                            href="#">
+                        <router-link :to="{ name: item.routeName }" class="nav-link active">
                             {{ item.title }}</router-link>
                     </li>
                 </ul>
