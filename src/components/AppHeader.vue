@@ -13,7 +13,7 @@ export default {
                 },
                 {
                     routeName: 'projects',
-                    title: 'Projects'
+                    title: 'Elenco Progetti'
                 },
             ]
         }
